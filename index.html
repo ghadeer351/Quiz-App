@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizfy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+ <main class="container">
+    <section class="start-container" id="start-screen"  >
+        <header class="start-header">
+            <span>dev ghadeer</span>
+            <h1>Quizfy</h1>
+        </header>
+        <div class="quiz-info-card">
+            <div class="title">
+                <h2>Ready to test your knowledge?</h2>
+            <p>Answer the following questions to see how much you know!</p>
+         </div>
+            <div class="difficulty-options" id="difficulty-options" role="group" aria-label="Select quiz difficulty">
+                <button class="difficulty-btn" type="button" data-difficulty="easy" aria-pressed="false">Easy</button>
+                <button class="difficulty-btn is-selected" type="button" data-difficulty="medium" aria-pressed="true">Medium</button>
+                <button class="difficulty-btn" type="button" data-difficulty="hard" aria-pressed="false">Hard</button>
+            </div>
+            <div class="info">
+                <div class="time">
+                    <span>Time</span>
+                    <div class="setting-controls">
+                        <button class="setting-btn" id="decrease-time" type="button" aria-label="Decrease time">−</button>
+                        <p id="test-time">5 min</p>
+                        <button class="setting-btn" id="increase-time" type="button" aria-label="Increase time">+</button>
+                    </div>
+                </div>
+                <div class="questions">
+                    <span>Questions</span>
+                    <div class="setting-controls">
+                        <button class="setting-btn" id="decrease-questions" type="button" aria-label="Decrease question count">−</button>
+                        <p id="question-number">10 questions</p>
+                        <button class="setting-btn" id="increase-questions" type="button" aria-label="Increase question count">+</button>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="start-btn" id="start-btn" type="button">Start Quiz</button>
+        </div>
+    </section>
+
+    <section class="quiz-container" id="quiz-screen" hidden>
+       <header class="quiz-header">
+            <span id="timer" aria-label="Time remaining">05:00</span>
+            <h1>Quizfy</h1>
+        </header>
+        <div class="row">
+          <p class="progress" id="progress-text" aria-live="polite">0%</p>
+          <p class="question-count" id="question-count">Question 1 of 10</p>
+       </div>
+       <div class="progressbar">
+      <progress id="progress-bar" value="0" max="100"></progress>
+       </div>
+       <div class="questions-area">
+            <p class="quiz-question" id="quiz-question"></p>
+           <p id="answer-error" class="answer-error" role="alert" hidden>
+               Please select an answer before continuing.
+           </p>
+           <div class="options" id="options-container"></div>
+        </div>
+        <div class="next-button">
+            <button class="next-btn" id="next-btn" type="button">Next Question</button>
+        </div>
+    </section>
+
+ <section class="result-container" id="result-screen" hidden>
+        <header class="result-header">
+            <span>dev ghadeer</span>
+            <h1>Quizfy</h1>
+        </header>
+        <div class="result-card">
+            <h2>Quiz Completed!</h2>
+            <p>Your Score: <span id="score">0%</span></p>
+            <div class="result-row">
+                <span>Correct Answers:</span>
+                <span id="correct-answers">0</span>
+            </div>
+            <div class="result-row">
+                <span>Incorrect Answers:</span>
+                <span id="incorrect-answers">0</span>
+            </div>
+            <button class="restart-btn" id="restart-btn" type="button">Restart Quiz</button>
+        </div>
+    </section>
+
+ </main>
+</body>
+</html>
